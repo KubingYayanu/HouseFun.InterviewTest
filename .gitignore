@@ -6,3 +6,6 @@ Northwind.Web/obj/
 Notrhwind.Repository/obj/
 packages/EntityFramework.6.2.0/EntityFramework.6.2.0.nupkg
 packages/
+Northwind.Entity/bin/
+Northwind.Service/bin/
+Notrhwind.Repository/bin/

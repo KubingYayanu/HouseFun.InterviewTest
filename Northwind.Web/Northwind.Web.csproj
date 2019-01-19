@@ -97,9 +97,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Northwind.mdf" />
-    <Content Include="App_Data\Northwind_log.ldf">
-      <DependentUpon>Northwind.mdf</DependentUpon>
+    <Content Include="App_Data\northwnd.mdf" />
+    <Content Include="App_Data\northwnd_log.ldf">
+      <DependentUpon>northwnd.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -124,6 +124,20 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Northwind.Entity\Northwind.Entity.csproj">
+      <Project>{089c42f0-d75e-4c4d-9e61-a4db078a0a5a}</Project>
+      <Name>Northwind.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Northwind.Service\Northwind.Service.csproj">
+      <Project>{87546625-b986-41b5-89bc-dc9e76cd69d4}</Project>
+      <Name>Northwind.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Notrhwind.Repository\Notrhwind.Repository.csproj">
+      <Project>{49f7342b-ecd6-4dc1-916d-5b72932b4ea8}</Project>
+      <Name>Notrhwind.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
