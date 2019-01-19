@@ -1,0 +1,8 @@
+.vs/
+Northwind.Entity/obj/
+Northwind.Service/obj/
+Northwind.Web/bin/
+Northwind.Web/obj/
+Notrhwind.Repository/obj/
+packages/EntityFramework.6.2.0/EntityFramework.6.2.0.nupkg
+packages/
