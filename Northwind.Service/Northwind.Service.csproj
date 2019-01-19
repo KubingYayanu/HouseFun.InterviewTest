@@ -49,11 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerService.cs" />
+    <Compile Include="ICustomerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Northwind.Entity\Northwind.Entity.csproj">
+      <Project>{089C42F0-D75E-4C4D-9E61-A4DB078A0A5A}</Project>
+      <Name>Northwind.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Notrhwind.Repository\Notrhwind.Repository.csproj">
+      <Project>{49F7342B-ECD6-4DC1-916D-5B72932B4EA8}</Project>
+      <Name>Notrhwind.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
