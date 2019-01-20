@@ -1,18 +1,41 @@
-﻿@model List<Northwind.Entity.Models.Customer>
+﻿<h2>Customer</h2>
 
-<!DOCTYPE html>
+<table id="customers" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>CustomerID</th>
+            <th>CompanyName</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div>
-        @foreach (var customer in Model)
-        {
-            @customer.CustomerID<br />
-        }
-    </div>
-</body>
-</html>
+@section scripts
+{
+    <script>
+        $(function () {
+            var table = $("#customers").DataTable({
+                ajax: {
+                    url: "/api/customer/getcustomers",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "customerID",
+                        render: function (data, type, customer) {
+                            return "<a href='/customer/edit/" + customer.customerID + "'>" + customer.customerID + "</a>";
+                        }
+                    },
+                    {
+                        data: "companyName"
+                    },
+                    {
+                        data: "address"
+                    }
+                ]
+            });
+        });
+    </script>
+
+}

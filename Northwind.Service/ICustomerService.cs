@@ -1,4 +1,5 @@
 ﻿using Northwind.Entity.Models;
+using Northwind.Service.Dtos;
 using System.Collections.Generic;
 
 namespace Northwind.Service
@@ -7,7 +8,7 @@ namespace Northwind.Service
     {
         Customer GetCustomer(string id);
 
-        List<Customer> GetCustomers();
+        List<CustomerDto> GetCustomers();
 
         bool AddCustomer(Customer customer);
 
