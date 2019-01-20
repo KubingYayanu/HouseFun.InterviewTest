@@ -1,4 +1,6 @@
-﻿using Northwind.Entity.Models;
+﻿using AutoMapper;
+using Northwind.Entity.Models;
+using Northwind.Service.Dtos;
 using Notrhwind.Repository;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +18,12 @@ namespace Northwind.Service
 
         public Customer GetCustomer(string id) => customerRepository.GetAll().FirstOrDefault(x => x.CustomerID == id);
 
-        public List<Customer> GetCustomers() => customerRepository.GetAll().ToList();
+        public List<CustomerDto> GetCustomers()
+        {
+            var result = customerRepository.GetAll().ToList();
+
+            return Mapper.Map<List<CustomerDto>>(result);
+        }
 
         public bool AddCustomer(Customer customer)
         {
