@@ -10,10 +10,10 @@ namespace Northwind.Service
 
         List<CustomerDto> GetCustomers();
 
-        bool AddCustomer(Customer customer);
+        bool AddCustomer(CustomerDto customer);
 
         bool DeleteCustomer(string id);
 
-        bool UpdateCustomer(Customer customer);
+        bool UpdateCustomer(CustomerDto customer);
     }
 }
