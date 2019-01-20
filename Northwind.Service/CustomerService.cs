@@ -25,11 +25,13 @@ namespace Northwind.Service
             return Mapper.Map<List<CustomerDto>>(result);
         }
 
-        public bool AddCustomer(Customer customer)
+        public bool AddCustomer(CustomerDto customer)
         {
             try
             {
-                customerRepository.Add(customer);
+                var newCustomer = new Customer();
+                Mapper.Map(customer, newCustomer);
+                customerRepository.Add(newCustomer);
             }
             catch
             {
@@ -53,11 +55,18 @@ namespace Northwind.Service
             return true;
         }
 
-        public bool UpdateCustomer(Customer customer)
+        public bool UpdateCustomer(CustomerDto customer)
         {
             try
             {
-                customerRepository.Update(customer);
+                var customerInDB = GetCustomer(customer.CustomerID);
+                if (customerInDB == null)
+                {
+                    return false;
+                }
+
+                Mapper.Map(customer, customerInDB);
+                customerRepository.Update(customerInDB);
             }
             catch
             {
